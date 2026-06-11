@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gene Beeche | Faith. Discipline. Purpose.</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Gene Beeche - Faith, discipline, and purpose. A personal journey of faith, boxing, marriage, and growth.">
+    <meta name="keywords" content="Gene Beeche, faith, discipline, boxing, Christian, personal development">
+    <meta name="author" content="Gene Beeche">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gene Beeche | Faith. Discipline. Purpose.">
+    <meta property="og:description" content="Documenting the journey of becoming the man God has called me to be.">
+    <meta property="og:type" content="website">
+
     <style>
-        /* Global Styles */
         :root {
             --bg-color: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #d4af37; /* Matte Gold */
+            --accent-color: #d4af37;
             --card-bg: #1e1e1e;
             --border-color: #333333;
         }
 
         body {
-            font-family: 'Times New Roman', Times, serif; /* Clean traditional serif font */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
             padding: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 60%);
+            pointer-events: none;
         }
 
         .container {
@@ -29,18 +51,17 @@
             padding: 40px 20px;
         }
 
-        /* Hero Section */
         header {
             text-align: center;
-            padding: 60px 0 30px 0;
+            padding: 60px 0 20px 0;
         }
 
         h1 {
             font-size: 2.5rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 5px;
             color: #ffffff;
+            margin-bottom: 5px;
         }
 
         .subtitle {
@@ -59,22 +80,19 @@
             margin: 0 auto;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border-color), transparent);
-            margin: 40px 0;
+        nav {
+            text-align: center;
+            margin: 20px 0 40px 0;
         }
 
-        /* Typography & Headings */
         h2 {
             font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #ffffff;
-            margin-bottom: 20px;
             border-left: 3px solid var(--accent-color);
             padding-left: 15px;
+            margin-bottom: 20px;
         }
 
         p {
@@ -83,11 +101,9 @@
             margin-bottom: 20px;
         }
 
-        /* Lists & Grids */
         ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         li {
@@ -97,10 +113,14 @@
             margin-bottom: 10px;
             border-radius: 4px;
             border: 1px solid var(--border-color);
-            color: #e0e0e0;
+            transition: all 0.2s ease;
         }
 
-        /* Callout Box for Scripture */
+        li:hover {
+            transform: translateY(-2px);
+            background-color: #252525;
+        }
+
         .scripture-box {
             background-color: var(--card-bg);
             border: 1px solid var(--accent-color);
@@ -124,16 +144,6 @@
             color: var(--accent-color);
         }
 
-        /* Footer & Socials */
-        footer {
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
         .btn {
             display: inline-block;
             background-color: transparent;
@@ -144,95 +154,115 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-decoration: none;
-            transition: all 0.3s ease;
             border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 5px;
         }
 
         .btn:hover {
             background-color: #ffffff;
             color: var(--bg-color);
-            cursor: pointer;
         }
 
-        /* Responsive scaling */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .container { padding: 20px; }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- Header -->
-        <header>
-            <h1>Gene Beeche</h1>
-            <div class="subtitle">Faith. Discipline. Purpose.</div>
-            <p class="quote">“Documenting the journey of becoming the man God has called me to be.”</p>
-        </header>
+    <header>
+        <h1>Gene Beeche</h1>
+        <div class="subtitle">Faith. Discipline. Purpose.</div>
+        <p class="quote">“Documenting the journey of becoming the man God has called me to be.”</p>
+    </header>
 
-        <hr>
+    <nav>
+        <a href="#about" class="btn">About</a>
+        <a href="#beliefs" class="btn">Beliefs</a>
+        <a href="#goals" class="btn">Goals</a>
+        <a href="#socials" class="btn">Connect</a>
+    </nav>
 
-        <!-- About Section -->
-        <section>
-            <h2>About Me</h2>
-            <p>My name is Gene Beeche.</p>
-            <p>I am a Christian, husband, boxer, and I am committed to building a life built on faith, discipline, and purpose.</p>
-            <p>At 23 years old, I am focused on strengthening my relationship with God, building a strong marriage, developing physical and mental resilience, and preparing for the responsibilities that lie ahead.</p>
-            <p>This website is where I share lessons, insights, and experiences from that journey.</p>
-        </section>
+    <hr>
 
-        <hr>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Gene Beeche.</p>
+        <p>I am a Christian, husband, boxer, and I am committed to building a life built on faith, discipline, and purpose.</p>
+        <p>At 23 years old, I am focused on strengthening my relationship with God, building a strong marriage, developing physical and mental resilience, and preparing for the responsibilities that lie ahead.</p>
+    </section>
 
-        <!-- Core Beliefs -->
-        <section>
-            <h2>What I Believe</h2>
-            <ul>
-                <li>• Faith is the foundation of a meaningful life.</li>
-                <li>• Discipline is more reliable than motivation.</li>
-                <li>• Strong families build strong communities.</li>
-                <li>• Growth requires sacrifice and discomfort.</li>
-                <li>• A man’s character matters more than his reputation.</li>
-                <li>• Legacy is built through daily actions.</li>
-            </ul>
-        </section>
+    <hr>
 
-        <hr>
+    <section id="beliefs">
+        <h2>What I Believe</h2>
+        <ul>
+            <li>Faith is the foundation of a meaningful life.</li>
+            <li>Discipline is more reliable than motivation.</li>
+            <li>Strong families build strong communities.</li>
+            <li>Growth requires sacrifice and discomfort.</li>
+            <li>Character matters more than reputation.</li>
+            <li>Legacy is built through daily actions.</li>
+        </ul>
+    </section>
 
-        <!-- Goals -->
-        <section>
-            <h2>Current Goals</h2>
-            <ul>
-                <li>→ Grow closer to God</li>
-                <li>→ Build a strong and lasting marriage</li>
-                <li>→ Continue developing as a boxer</li>
-                <li>→ Build financial freedom through investing and business</li>
-                <li>→ Encourage other men to pursue purpose and excellence</li>
-            </ul>
-        </section>
+    <hr>
 
-        <hr>
+    <section id="goals">
+        <h2>Current Goals</h2>
+        <ul>
+            <li>Grow closer to God</li>
+            <li>Build a strong and lasting marriage</li>
+            <li>Continue developing as a boxer</li>
+            <li>Build financial freedom through investing and business</li>
+            <li>Encourage other men to pursue purpose and excellence</li>
+        </ul>
+    </section>
 
-        <!-- Scripture Callout -->
-        <section class="scripture-box">
-            <div class="scripture-text">“Be watchful, stand firm in the faith, act like men, be strong. Let all that you do be done in love.”</div>
-            <div class="scripture-reference">1 Corinthians 16:13–14</div>
-        </section>
+    <hr>
 
-        <hr>
-
-        <!-- Footer / Call to Action -->
-        <footer>
-            <h2>Follow the Journey</h2>
-            <p>Stay connected as I document the process and share future writings.</p>
-            <div class="social-links">
-                <!-- Replace '#' with your actual social media links or email later -->
-                <a href="#" class="btn">Connect</a>
-            </div>
-        </footer>
-
+    <div class="scripture-box">
+        <div class="scripture-text">
+            “Be watchful, stand firm in the faith, act like men, be strong. Let all that you do be done in love.”
+        </div>
+        <div class="scripture-reference">1 Corinthians 16:13–14</div>
     </div>
+
+    <hr>
+
+    <!-- SOCIALS ADDED HERE -->
+    <section id="socials">
+        <h2>Connect</h2>
+        <p>Follow my journey across platforms:</p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/genebeeche/" class="btn" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@genebeeche" class="btn" target="_blank">TikTok</a>
+            <a href="https://www.facebook.com/share/1DEDnq1Tuz/?mibextid=wwXIfr" class="btn" target="_blank">Facebook</a>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 Gene Beeche. All rights reserved.</p>
+    </footer>
+
+</div>
 
 </body>
 </html>
