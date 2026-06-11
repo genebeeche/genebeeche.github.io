@@ -10,7 +10,7 @@
 
 <style>
     :root {
-        --gold: #bfa13b; /* Slightly deeper gold for premium contrast on light backgrounds */
+        --gold: #bfa13b;
         --bg: #f9f9f9;
         --card: #ffffff;
         --border: #e5e5e5;
@@ -30,7 +30,7 @@
     /* HERO SECTION */
     .hero {
         text-align: center;
-        padding: 80px 20px 40px;
+        padding: 90px 20px 40px;
         background: radial-gradient(circle at top, rgba(191,161,59,0.06), transparent 60%);
     }
 
@@ -56,7 +56,7 @@
     .profile {
         text-align: center;
         margin-top: -20px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .profile img {
@@ -79,7 +79,7 @@
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 24px;
     }
 
     .full-width {
@@ -89,7 +89,7 @@
     /* CARDS */
     .card {
         background: var(--card);
-        padding: 30px;
+        padding: 35px;
         border-radius: 12px;
         border: 1px solid var(--border);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -120,7 +120,7 @@
     }
 
     li {
-        padding: 10px 0;
+        padding: 12px 0;
         color: #444444;
         font-size: 0.95rem;
         border-bottom: 1px solid #f0f0f0;
@@ -136,7 +136,7 @@
         overflow: hidden;
         border-radius: 12px;
         height: 100%;
-        min-height: 220px;
+        min-height: 240px;
         border: 1px solid var(--border);
     }
 
@@ -145,6 +145,12 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* Subtle hover effect on the image */
+    .image-card:hover .showcase-img {
+        transform: scale(1.03);
     }
 
     /* BUTTONS WITH LOGOS */
@@ -163,7 +169,7 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 11px 24px;
+        padding: 12px 26px;
         border: 1px solid var(--border);
         color: var(--text);
         text-decoration: none;
@@ -185,22 +191,35 @@
         border-color: var(--gold);
         color: var(--gold);
         background: rgba(191,161,59,0.03);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     }
 
     /* FOOTER */
     footer {
         text-align: center;
-        padding: 40px 20px;
+        padding: 60px 20px;
         color: var(--text-muted);
         font-size: 0.75rem;
         letter-spacing: 1px;
     }
 
+    /* INTERACTIVE SCROLL ANIMATION STYLES */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .scroll-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     /* RESPONSIVE LAYOUT */
     @media (max-width: 680px) {
-        .grid { grid-template-columns: 1fr; gap: 15px; }
+        .grid { grid-template-columns: 1fr; gap: 18px; }
         .full-width { grid-column: span 1; }
         .image-card { min-height: 260px; }
     }
@@ -222,7 +241,7 @@
     <div class="grid">
 
         <!-- ABOUT SECTION -->
-        <div class="card">
+        <div class="card scroll-reveal">
             <h2>About</h2>
             <p>
                 At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian, a husband, and an amateur boxer preparing to step back into the ring after years away. I don’t claim to have it all figured out, but I have a relentless commitment to showing up and fighting to improve.
@@ -230,12 +249,12 @@
         </div>
 
         <!-- MARRIAGE PHOTO CARD -->
-        <div class="card image-card">
+        <div class="card image-card scroll-reveal">
             <img class="showcase-img" src="marriage.png" alt="Gene and Wife">
         </div>
 
         <!-- CORE BELIEFS SECTION -->
-        <div class="card">
+        <div class="card scroll-reveal">
             <h2>Core Beliefs</h2>
             <ul>
                 <li>Faith is the ultimate foundation.</li>
@@ -246,7 +265,7 @@
         </div>
 
         <!-- VISION SECTION -->
-        <div class="card">
+        <div class="card scroll-reveal">
             <h2>Vision</h2>
             <ul>
                 <li>Spiritual: Daily growth in Christ</li>
@@ -257,10 +276,10 @@
         </div>
 
         <!-- SOCIAL CONNECT WITH LOGOS -->
-        <div class="card full-width socials">
+        <div class="card full-width socials scroll-reveal">
             <div class="btn-group">
                 <a class="btn" href="https://www.instagram.com/genebeeche/" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     Instagram
                 </a>
                 
@@ -282,6 +301,27 @@
 <footer>
     © 2026 Gene Beeche
 </footer>
+
+<!-- LIGHTWEIGHT SCROLL INTERACTION SCRIPT -->
+<script>
+    const revealCards = document.querySelectorAll('.scroll-reveal');
+
+    const revealOnScroll = () => {
+        revealCards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 80; // Triggers slightly before element enters view
+
+            if (cardTop < triggerPoint) {
+                card.classList.add('active');
+            }
+        });
+    };
+
+    // Run once on load to show any cards already above the fold
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    // Run on scroll
+    window.addEventListener('scroll', revealOnScroll);
+</script>
 
 </body>
 </html>
