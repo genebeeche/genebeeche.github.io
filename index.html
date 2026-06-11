@@ -158,11 +158,11 @@
         align-items: center;
     }
 
-    li::before {
-        content: "✓";
-        color: var(--gold);
-        font-weight: bold;
+    /* Icon styling inside lists */
+    li svg {
         margin-right: 12px;
+        flex-shrink: 0;
+        color: var(--gold);
     }
 
     /* DETAILED PILLARS */
@@ -459,25 +459,57 @@
         </p>
     </section>
 
-    <!-- VALUES & VISION SECTION (QUICK GLANCE) -->
+    <!-- VALUES & VISION SECTION (QUICK GLANCE WITH INTEGRATED THEME ICONS) -->
     <section class="reveal">
         <div class="list-container">
             <div>
                 <h2>Core Beliefs</h2>
                 <ul>
-                    <li>Faith as the foundation</li>
-                    <li>Discipline over motivation</li>
-                    <li>Character over reputation</li>
-                    <li>Growth through sacrifice</li>
+                    <li>
+                        <!-- Cross Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9h14"/></svg>
+                        Faith as the foundation
+                    </li>
+                    <li>
+                        <!-- Lightning Bolt Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        Discipline over motivation
+                    </li>
+                    <li>
+                        <!-- Anchor Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
+                        Character over reputation
+                    </li>
+                    <li>
+                        <!-- Lightning Bolt Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        Growth through sacrifice
+                    </li>
                 </ul>
             </div>
             <div>
                 <h2>Current Vision</h2>
                 <ul>
-                    <li>Deepening my walk with Christ</li>
-                    <li>Building a legacy for my family</li>
-                    <li>Returning to the boxing ring</li>
-                    <li>Empowering men to lead</li>
+                    <li>
+                        <!-- Cross Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9h14"/></svg>
+                        Deepening my walk with Christ
+                    </li>
+                    <li>
+                        <!-- Anchor Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
+                        Building a legacy for my family
+                    </li>
+                    <li>
+                        <!-- Lightning Bolt Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        Returning to the boxing ring
+                    </li>
+                    <li>
+                        <!-- Anchor Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
+                        Empowering men to lead
+                    </li>
                 </ul>
             </div>
         </div>
