@@ -3,19 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Gene Beeche | Faith. Discipline. Purpose.</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            color: #333;
+        /* Global Styles */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #d4af37; /* Matte Gold */
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
         }
-        h1 { color: #0066cc; }
+
+        body {
+            font-family: 'Times New Roman', Times, serif; /* Clean traditional serif font */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 0 30px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 40px 0;
+        }
+
+        /* Typography & Headings */
+        h2 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        /* Lists & Grids */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            background-color: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            color: #e0e0e0;
+        }
+
+        /* Callout Box for Scripture */
+        .scripture-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 40px 0;
+        }
+
+        .scripture-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .scripture-reference {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+
+        /* Footer & Socials */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: var(--bg-color);
+            cursor: pointer;
+        }
+
+        /* Responsive scaling */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This site is currently under construction. Stay tuned for updates!</p>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Gene Beeche</h1>
+            <div class="subtitle">Faith. Discipline. Purpose.</div>
+            <p class="quote">“Documenting the journey of becoming the man God has called me to be.”</p>
+        </header>
+
+        <hr>
+
+        <!-- About Section -->
+        <section>
+            <h2>About Me</h2>
+            <p>My name is Gene Beeche.</p>
+            <p>I am a Christian, husband, boxer, and aspiring author committed to building a life of faith, discipline, and purpose.</p>
+            <p>At 23 years old, I am focused on strengthening my relationship with God, building a strong marriage, developing physical and mental resilience, and preparing for the responsibilities that lie ahead.</p>
+            <p>This website is where I share lessons, insights, and experiences from that journey.</p>
+        </section>
+
+        <hr>
+
+        <!-- Core Beliefs -->
+        <section>
+            <h2>What I Believe</h2>
+            <ul>
+                <li>• Faith is the foundation of a meaningful life.</li>
+                <li>• Discipline is more reliable than motivation.</li>
+                <li>• Strong families build strong communities.</li>
+                <li>• Growth requires sacrifice and discomfort.</li>
+                <li>• A man’s character matters more than his reputation.</li>
+                <li>• Legacy is built through daily actions.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- Goals -->
+        <section>
+            <h2>Current Goals</h2>
+            <ul>
+                <li>→ Grow closer to God</li>
+                <li>→ Build a strong and lasting marriage</li>
+                <li>→ Continue developing as a boxer</li>
+                <li>→ Write and publish books</li>
+                <li>→ Build financial freedom through investing and business</li>
+                <li>→ Encourage other men to pursue purpose and excellence</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- Scripture Callout -->
+        <section class="scripture-box">
+            <div class="scripture-text">“Be watchful, stand firm in the faith, act like men, be strong. Let all that you do be done in love.”</div>
+            <div class="scripture-reference">1 Corinthians 16:13–14</div>
+        </section>
+
+        <hr>
+
+        <!-- Footer / Call to Action -->
+        <footer>
+            <h2>Follow the Journey</h2>
+            <p>Stay connected as I document the process and share future writings.</p>
+            <div class="social-links">
+                <!-- Replace '#' with your actual social media links or email later -->
+                <a href="#" class="btn">Connect</a>
+            </div>
+        </footer>
+
+    </div>
+
 </body>
 </html>
