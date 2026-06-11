@@ -8,12 +8,15 @@
 
 <style>
     :root {
-        --gold: #bfa13b;
-        --bg: #ffffff;
-        --section-bg: #fdfdfd;
-        --border: #eeeeee;
-        --text: #1a1a1a;
-        --text-muted: #666666;
+        --primary: #0f172a; /* Deep professional navy */
+        --primary-light: #1e293b;
+        --gold: #c5a85c; /* Refined premium gold */
+        --gold-hover: #b39449;
+        --bg: #f8fafc; /* Ultra-clean slate background */
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+        --text: #0f172a;
+        --text-muted: #475569; /* Uplifting, readable slate grey */
     }
 
     body {
@@ -28,90 +31,117 @@
     /* HEADER SECTION */
     header {
         text-align: center;
-        padding: 100px 20px 60px;
+        padding: 120px 20px 80px;
+        background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         border-bottom: 1px solid var(--border);
+        position: relative;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary), var(--gold));
     }
 
     .profile-img {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        border: 1px solid var(--gold);
+        border: 2px solid var(--gold);
         object-fit: cover;
         margin-bottom: 30px;
-        padding: 4px;
+        padding: 5px;
         background: #fff;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-weight: 800;
         margin: 0;
         letter-spacing: -0.5px;
-        text-transform: none;
+        color: var(--primary);
     }
 
     .tagline {
         color: var(--gold);
-        letter-spacing: 3px;
-        margin-top: 10px;
-        font-size: 0.9rem;
-        font-weight: 600;
+        letter-spacing: 4px;
+        margin-top: 12px;
+        font-size: 0.85rem;
+        font-weight: 700;
         text-transform: uppercase;
     }
 
     .header-quote {
         font-style: italic;
         color: var(--text-muted);
-        max-width: 500px;
-        margin: 20px auto 0 auto;
+        max-width: 540px;
+        margin: 25px auto 0 auto;
         font-size: 1.05rem;
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
     /* CENTERED MAIN CONTENT */
     .content-wrapper {
-        max-width: 650px;
+        max-width: 700px;
         margin: 0 auto;
-        padding: 60px 20px;
+        padding: 20px 20px 80px;
     }
 
     section {
-        margin-bottom: 100px;
+        background: var(--card-bg);
+        padding: 50px 40px;
+        border-radius: 12px;
+        margin-bottom: 40px;
         text-align: center;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
     }
 
     .about-text {
         font-size: 1.15rem;
-        color: #333;
+        color: var(--primary-light);
         font-weight: 400;
+        margin: 0;
     }
 
     h2 {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         color: var(--gold);
-        margin-bottom: 30px;
+        margin-top: 0;
+        margin-bottom: 35px;
+        font-weight: 700;
         position: relative;
     }
 
     h2::after {
         content: "";
         display: block;
-        width: 30px;
-        height: 1px;
+        width: 40px;
+        height: 2px;
         background: var(--gold);
-        margin: 10px auto;
+        margin: 12px auto 0;
+        border-radius: 2px;
     }
 
     /* QUICK GLANCE LIST STYLING */
     .list-container {
         display: flex;
-        justify-content: center;
-        gap: 60px;
+        justify-content: space-between;
+        gap: 40px;
         flex-wrap: wrap;
         text-align: left;
+    }
+
+    .list-container > div {
+        flex: 1;
+        min-width: 240px;
     }
 
     ul {
@@ -121,9 +151,18 @@
     }
 
     li {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         font-size: 1rem;
         color: var(--text-muted);
+        display: flex;
+        align-items: center;
+    }
+
+    li::before {
+        content: "✓";
+        color: var(--gold);
+        font-weight: bold;
+        margin-right: 12px;
     }
 
     /* DETAILED PILLARS */
@@ -133,14 +172,20 @@
 
     .pillar-item {
         margin-bottom: 35px;
+        border-left: 3px solid var(--gold);
+        padding-left: 20px;
+    }
+
+    .pillar-item:last-child {
+        margin-bottom: 0;
     }
 
     .pillar-item h3 {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         font-weight: 700;
         margin: 0 0 8px 0;
         letter-spacing: -0.2px;
-        color: var(--text);
+        color: var(--primary);
     }
 
     .pillar-item p {
@@ -154,7 +199,7 @@
     .legacy-block {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
-        gap: 30px;
+        gap: 40px;
         align-items: center;
         text-align: left;
     }
@@ -164,24 +209,24 @@
     }
 
     .legacy-block h2::after {
-        margin: 10px 0 0 0;
+        margin: 12px 0 0 0;
     }
 
     .legacy-quote {
         font-style: italic;
         font-size: 1.05rem;
-        color: #333;
+        color: var(--primary-light);
         margin: 0;
         line-height: 1.7;
     }
 
     .legacy-image-frame {
         width: 100%;
-        height: 240px;
-        border-radius: 4px;
+        height: 260px;
+        border-radius: 8px;
         overflow: hidden;
         border: 1px solid var(--border);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05);
     }
 
     .legacy-image-frame img {
@@ -193,7 +238,7 @@
     /* MEDIA GRID */
     .media-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         gap: 20px;
         margin-top: 30px;
     }
@@ -202,28 +247,41 @@
         text-decoration: none;
         color: inherit;
         text-align: left;
-        transition: transform 0.2s ease;
+        transition: all 0.2s ease;
     }
 
     .media-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px);
     }
 
     .thumb-placeholder {
         width: 100%;
         aspect-ratio: 16 / 9;
-        background-color: #f7f6f2;
+        background-color: var(--bg);
         border: 1px solid var(--border);
-        border-radius: 4px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        transition: border-color 0.2s ease;
+    }
+
+    .media-card:hover .thumb-placeholder {
+        border-color: var(--gold);
     }
 
     .play-btn {
         font-size: 14px;
         color: var(--gold);
+        background: #fff;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     }
 
     .media-card h4 {
@@ -231,16 +289,16 @@
         font-weight: 600;
         margin: 0;
         line-height: 1.4;
-        color: var(--text);
+        color: var(--primary);
     }
 
     /* CTA EMAIL OPT-IN */
     .cta-box {
-        background: #111111;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
         color: #ffffff;
-        padding: 50px 30px;
-        border-radius: 6px;
-        text-align: center;
+        padding: 60px 40px;
+        border: none;
+        box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15);
     }
 
     .cta-box h2 {
@@ -253,35 +311,37 @@
     }
 
     .cta-subtitle {
-        font-size: 1.3rem;
-        font-weight: 600;
+        font-size: 1.4rem;
+        font-weight: 700;
         margin: 0 0 15px 0;
         letter-spacing: -0.3px;
+        color: #ffffff;
     }
 
     .cta-desc {
         font-size: 0.95rem;
-        color: #b3b3b3;
-        margin: 0 0 30px 0;
-        line-height: 1.6;
+        color: #94a3b8;
+        margin: 0 0 35px 0;
+        line-height: 1.7;
     }
 
     .cta-form {
         display: flex;
-        gap: 10px;
-        max-width: 450px;
+        gap: 12px;
+        max-width: 480px;
         margin: 0 auto;
     }
 
     .cta-input {
         flex: 1;
-        padding: 12px 15px;
-        border: 1px solid #333;
-        background: #1a1a1a;
+        padding: 14px 18px;
+        border: 1px solid #334155;
+        background: rgba(15, 23, 42, 0.6);
         color: #fff;
         font-size: 0.95rem;
-        border-radius: 4px;
+        border-radius: 6px;
         font-family: inherit;
+        transition: border-color 0.2s ease;
     }
 
     .cta-input:focus {
@@ -291,27 +351,28 @@
 
     .cta-button {
         background: var(--gold);
-        color: #111;
+        color: var(--primary);
         border: none;
-        padding: 12px 24px;
+        padding: 14px 28px;
         font-size: 0.9rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        border-radius: 4px;
+        border-radius: 6px;
         cursor: pointer;
-        transition: background 0.2s ease;
+        transition: all 0.2s ease;
     }
 
     .cta-button:hover {
-        background: #d6b542;
+        background: var(--gold-hover);
+        transform: translateY(-1px);
     }
 
     /* SOCIAL BUTTONS */
     .social-links {
         display: flex;
         justify-content: center;
-        gap: 12px;
+        gap: 16px;
         flex-wrap: wrap;
         margin-top: 40px;
     }
@@ -320,13 +381,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 45px;
-        height: 45px;
+        width: 46px;
+        height: 46px;
         border: 1px solid var(--border);
         border-radius: 50%;
-        color: var(--text);
+        color: var(--primary-light);
+        background: #fff;
         text-decoration: none;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
 
     .btn svg {
@@ -339,6 +402,7 @@
         border-color: var(--gold);
         color: var(--gold);
         transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(197, 168, 92, 0.2);
     }
 
     /* SCROLL REVEAL */
@@ -356,16 +420,20 @@
     footer {
         padding: 60px 20px;
         text-align: center;
-        font-size: 0.8rem;
-        color: #999;
+        font-size: 0.85rem;
+        color: var(--text-muted);
         border-top: 1px solid var(--border);
+        background: #fff;
     }
 
     /* RESPONSIVE DESIGN */
-    @media (max-width: 600px) {
-        .list-container { flex-direction: column; gap: 30px; align-items: center; text-align: center; }
-        .legacy-block { grid-template-columns: 1fr; gap: 20px; }
-        .legacy-image-frame { order: -1; height: 200px; }
+    @media (max-width: 650px) {
+        section { padding: 40px 20px; }
+        .list-container { flex-direction: column; gap: 35px; }
+        .legacy-block { grid-template-columns: 1fr; gap: 30px; }
+        .legacy-block h2 { text-align: center; }
+        .legacy-block h2::after { margin: 12px auto 0; }
+        .legacy-image-frame { order: -1; height: 220px; }
         .cta-form { flex-direction: column; }
         .cta-button { width: 100%; }
     }
@@ -378,18 +446,20 @@
     <img src="training.png" alt="Gene Beeche" class="profile-img">
     <h1>Gene Beeche</h1>
     <div class="tagline">Faith • Discipline • Purpose</div>
-    <div class="header-quote">“Documenting the journey of becoming the man God has called me to be, hopefully to encourage others to do the same.”</div>
+    <div class="header-quote">“Documenting the journey of becoming the man God has called me to be, whist hopefully encouraging others to do the same.”</div>
 </header>
 
 <div class="content-wrapper">
     
+    <!-- MISSION SECTION -->
     <section class="reveal">
         <h2>The Journey</h2>
         <p class="about-text">
-            At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian and a husband preparing to step back into the amateur boxing ring after years away. I don’t claim to have it all figured out, but I have a relentless commitment to showing up, fighting to improve, and documenting the reality of the grind.
+            At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian and a husband preparing to step back into the amateur boxing ring after years away. I don’t claim to have it all figured out, but I have a relentless commitment to showing up, fighting to improve, and documenting the reality of the grind—with the ultimate goal of challenging and encouraging young men to step up and do the same.
         </p>
     </section>
 
+    <!-- VALUES & VISION SECTION (QUICK GLANCE) -->
     <section class="reveal">
         <div class="list-container">
             <div>
@@ -413,6 +483,7 @@
         </div>
     </section>
 
+    <!-- EXPANDED DETAILED PILLARS -->
     <section class="reveal pillars-detailed">
         <h2>Our Pillars</h2>
         
@@ -433,10 +504,11 @@
         
         <div class="pillar-item">
             <h3>Growth Through Sacrifice</h3>
-            <p>Comfort is the enemy of excellence. To reach the next level, you must be willing to sacrifice your old habits, your comfort zones, and the things holding you back.</p>
+            <p>Comfort is the enemy of excellence. To reach the next level, you must be willing to sacrifice your old habits, your comfort zones, and the things holding you back. We fight to improve daily, setting a standard for the next generation of young men to follow.</p>
         </div>
     </section>
 
+    <!-- TWO-COLUMN LEGACY FRAME -->
     <section class="reveal legacy-block">
         <div>
             <h2>Building A Legacy</h2>
@@ -449,21 +521,25 @@
         </div>
     </section>
 
+    <!-- DYNAMIC LATEST MEDIA GRID -->
     <section class="reveal">
         <h2>Documenting The Reality</h2>
         <div class="media-grid">
+            <!-- Video Card 1 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
                 </div>
                 <h4>The Reality of the Grind: Ep. 1</h4>
             </a>
+            <!-- Video Card 2 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
                 </div>
                 <h4>Why Motivation Fails</h4>
             </a>
+            <!-- Video Card 3 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
@@ -473,6 +549,7 @@
         </div>
     </section>
 
+    <!-- CALL TO ACTION BLOCK -->
     <section class="reveal cta-box">
         <h2>Join The Pursuit</h2>
         <p class="cta-subtitle">The reality of the grind, delivered straight to your inbox.</p>
@@ -484,6 +561,7 @@
         </form>
     </section>
 
+    <!-- CONNECT SECTION -->
     <section class="reveal">
         <h2>Connect</h2>
         <div class="social-links">
