@@ -93,22 +93,48 @@
     /* HEADER SECTION */
     header {
         text-align: center;
-        padding: 80px 20px 80px;
+        padding: 60px 20px 60px;
         background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         border-bottom: 1px solid var(--border);
         position: relative;
     }
 
+    /* NEW SQUARE PHOTO FRAME STYLE */
+    .profile-image-container {
+        position: relative;
+        width: 220px; /* Increased size from 150px */
+        height: 220px;
+        margin: 0 auto 30px auto;
+        border-radius: 16px; /* Softened square edges */
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+        border: 1px solid var(--border);
+    }
+
     .profile-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 2px solid var(--gold);
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        margin-bottom: 30px;
-        padding: 5px;
-        background: #fff;
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* Subtle premium border accent line underneath the frame */
+    .profile-image-container::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        border: 2px solid transparent;
+        background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(197, 168, 92, 0.4)) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .profile-image-container:hover .profile-img {
+        transform: scale(1.03); /* Extremely subtle interactive feel */
     }
 
     h1 {
@@ -491,6 +517,7 @@
         .cta-form { flex-direction: column; }
         .cta-button { width: 100%; }
         .nav-links { gap: 15px; }
+        .profile-image-container { width: 180px; height: 180px; } /* Slightly scaled for small mobile displays */
     }
 </style>
 </head>
@@ -510,7 +537,10 @@
 </nav>
 
 <header>
-    <img src="training.png" alt="Gene Beeche" class="profile-img">
+    <!-- UPDATED IMAGE CONTAINER -->
+    <div class="profile-image-container">
+        <img src="training.png" alt="Gene Beeche" class="profile-img">
+    </div>
     <h1>Gene Beeche</h1>
     <div class="tagline">Faith • Discipline • Purpose</div>
     <div class="header-quote">“Documenting the journey of becoming the man God has called me to be, whist hopefully encouraging others to do the same.”</div>
@@ -522,7 +552,7 @@
     <section id="about" class="reveal">
         <h2>The Journey</h2>
         <p class="about-text">
-            At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian and a husband preparing to step back into the amateur boxing ring after years away. I don’t claim to have it all figured out, but I have a commitment to showing up, fighting to improve, and documenting the reality of the grind—with the ultimate goal of challenging and encouraging young men to step up and do the same.
+            At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian and a husband preparing to step back into the amateur boxing ring after years away. I don’t claim to have it all figured out, but I have a relentless commitment to showing up, fighting to improve, and documenting the reality of the grind—with the ultimate goal of challenging and encouraging young men to step up and do the same.
         </p>
     </section>
 
@@ -567,7 +597,7 @@
                     </li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
-                        Motivating men to live like he's coming back soon... Because he is!
+                        Motivating men to live like Jesus is coming back soon... Because he is!
                     </li>
                 </ul>
             </div>
