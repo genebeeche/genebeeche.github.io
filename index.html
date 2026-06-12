@@ -26,25 +26,77 @@
         color: var(--text);
         line-height: 1.8;
         -webkit-font-smoothing: antialiased;
+        padding-top: 70px; /* Space for the fixed navigation bar */
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: 700px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-logo {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--primary);
+        text-decoration: none;
+        letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--gold);
+    }
+
+    .nav-links a.featured-link {
+        color: var(--gold);
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 2px;
+    }
+
+    .nav-links a.featured-link:hover {
+        color: var(--gold-hover);
+        border-color: var(--gold-hover);
     }
 
     /* HEADER SECTION */
     header {
         text-align: center;
-        padding: 120px 20px 80px;
+        padding: 80px 20px 80px;
         background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         border-bottom: 1px solid var(--border);
         position: relative;
-    }
-
-    header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: linear-gradient(90deg, var(--primary), var(--gold));
     }
 
     .profile-img {
@@ -100,6 +152,7 @@
         text-align: center;
         border: 1px solid var(--border);
         box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+        scroll-margin-top: 90px; /* Smooth scroll offset for the fixed nav */
     }
 
     .about-text {
@@ -155,10 +208,9 @@
         font-size: 1rem;
         color: var(--text-muted);
         display: flex;
-        align-items: center; /* Perfectly centers icon with text line */
+        align-items: center;
     }
 
-    /* Icon styling inside lists */
     li svg {
         margin-right: 12px;
         flex-shrink: 0;
@@ -185,7 +237,7 @@
     .pillar-item h3 {
         font-size: 1.1rem;
         font-weight: 700;
-        margin: 0 0 12px 0; /* Increased bottom margin for better spacing */
+        margin: 0 0 12px 0;
         letter-spacing: -0.2px;
         color: var(--primary);
     }
@@ -438,11 +490,24 @@
         .legacy-image-frame { order: -1; height: 220px; }
         .cta-form { flex-direction: column; }
         .cta-button { width: 100%; }
+        .nav-links { gap: 15px; }
     }
 </style>
 </head>
 
 <body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <div class="nav-container">
+        <a href="#" class="nav-logo">Gene Beeche</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#media">Media</a>
+            <a href="book.html" class="featured-link">The Book</a>
+        </div>
+    </div>
+</nav>
 
 <header>
     <img src="training.png" alt="Gene Beeche" class="profile-img">
@@ -454,7 +519,7 @@
 <div class="content-wrapper">
     
     <!-- MISSION SECTION -->
-    <section class="reveal">
+    <section id="about" class="reveal">
         <h2>The Journey</h2>
         <p class="about-text">
             At 23, my life is anchored by my faith in God, my marriage, and a daily commitment to growth. I am a Christian and a husband preparing to step back into the amateur boxing ring after years away. I don’t claim to have it all figured out, but I have a relentless commitment to showing up, fighting to improve, and documenting the reality of the grind—with the ultimate goal of challenging and encouraging young men to step up and do the same.
@@ -468,22 +533,18 @@
                 <h2>Core Beliefs</h2>
                 <ul>
                     <li>
-                        <!-- Cross Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9h14"/></svg>
                         Faith as the foundation
                     </li>
                     <li>
-                        <!-- Lightning Bolt Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                         Discipline over motivation
                     </li>
                     <li>
-                        <!-- Anchor Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
                         Character over reputation
                     </li>
                     <li>
-                        <!-- Lightning Bolt Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                         Growth through sacrifice
                     </li>
@@ -493,22 +554,18 @@
                 <h2>Current Vision</h2>
                 <ul>
                     <li>
-                        <!-- Cross Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9h14"/></svg>
                         Deepening my walk with Jesus
                     </li>
                     <li>
-                        <!-- Anchor Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
                         Building a legacy for my family
                     </li>
                     <li>
-                        <!-- Lightning Bolt Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                         Returning to the boxing ring
                     </li>
                     <li>
-                        <!-- Anchor Icon -->
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V21M5 12H2M19 12h3M12 21a6 6 0 0 1-6-6M12 21a6 6 0 0 0 6-6"/></svg>
                         Empowering men to live the way God says
                     </li>
@@ -556,24 +613,21 @@
     </section>
 
     <!-- DYNAMIC LATEST MEDIA GRID -->
-    <section class="reveal">
+    <section id="media" class="reveal">
         <h2>Documenting The Reality</h2>
         <div class="media-grid">
-            <!-- Video Card 1 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
                 </div>
                 <h4>The Reality of the Grind: Ep. 1</h4>
             </a>
-            <!-- Video Card 2 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
                 </div>
                 <h4>Why Motivation Fails</h4>
             </a>
-            <!-- Video Card 3 -->
             <a href="https://www.youtube.com/@genebeeche8129" target="_blank" class="media-card">
                 <div class="thumb-placeholder">
                     <span class="play-btn">▶</span>
@@ -622,7 +676,6 @@
 
 <script>
     const reveals = document.querySelectorAll('.reveal');
-    
     const revealOnScroll = () => {
         reveals.forEach(el => {
             const rect = el.getBoundingClientRect();
@@ -631,7 +684,6 @@
             }
         });
     };
-
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
 </script>
