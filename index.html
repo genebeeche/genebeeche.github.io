@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Book | Gene Beeche</title>
+<title>Gene Beeche | Faith & Purpose</title>
 
 <!-- Google Fonts for premium typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,10 +36,10 @@
         color: var(--primary-light);
         line-height: 1.8;
         -webkit-font-smoothing: antialiased;
-        padding-top: 70px; /* Space for the fixed navigation bar */
+        padding-top: 70px; /* Prevent header content clipping beneath navbar */
     }
 
-    /* NAVIGATION BAR */
+    /* PREMIUM FIXED NAVIGATION BAR */
     nav {
         position: fixed;
         top: 0;
@@ -92,22 +92,39 @@
 
     .nav-links a.featured-link {
         color: var(--gold);
-        border-bottom: 2px solid var(--gold);
-        padding-bottom: 2px;
     }
 
     .nav-links a.featured-link:hover {
         color: var(--gold-hover);
-        border-color: var(--gold-hover);
     }
 
-    /* HEADER SECTION */
+    /* IDENTITY & INTRODUCTION SECTION */
     header {
         text-align: center;
-        padding: 60px 20px;
+        padding: 90px 20px 60px;
         background: linear-gradient(180deg, #131a26 0%, var(--bg) 100%);
         border-bottom: 1px solid var(--border);
         position: relative;
+    }
+
+    .profile-frame {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 24px;
+        overflow: hidden;
+        border: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(197, 168, 92, 0.15);
+        background: var(--card-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     h1 {
@@ -118,7 +135,7 @@
         color: var(--primary);
     }
 
-    .tagline {
+    .subtitle {
         color: var(--gold);
         letter-spacing: 4px;
         margin-top: 12px;
@@ -127,13 +144,14 @@
         text-transform: uppercase;
     }
 
-    /* CENTERED MAIN CONTENT */
+    /* CENTERED MAIN CONTENT WRAPPER */
     .content-wrapper {
         max-width: 700px;
         margin: 0 auto;
-        padding: 20px 20px 80px;
+        padding: 40px 20px 80px;
     }
 
+    /* SECTION CONTAINERS */
     section {
         background: var(--card-bg);
         padding: 50px 40px;
@@ -142,7 +160,7 @@
         text-align: center;
         border: 1px solid var(--border);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        scroll-margin-top: 90px;
+        scroll-margin-top: 90px; /* Offset fixed header during scrolls */
         transition: border-color 0.3s ease;
     }
     
@@ -171,79 +189,59 @@
         border-radius: 2px;
     }
 
-    /* TWO-COLUMN GRID FOR BOOK PROFILE */
-    .book-showcase {
-        display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 40px;
-        align-items: center;
+    /* PARAGRAPH DESIGN ELEMENTS */
+    .lead-text {
+        font-size: 1.05rem;
+        color: var(--primary-light);
+        margin-bottom: 0;
         text-align: left;
     }
 
-    .book-showcase h2 {
+    /* PILLARS & GRID LISTS */
+    .pillars-grid {
         text-align: left;
     }
 
-    .book-showcase h2::after {
-        margin: 12px 0 0 0;
-    }
-
-    .book-cover-frame {
-        width: 100%;
-        aspect-ratio: 2 / 3;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        background: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .book-cover-frame:hover {
-        transform: scale(1.02);
-    }
-
-    .book-cover-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* CHAPTER/PILLAR LISTS */
-    .pillars-detailed {
-        text-align: left;
-    }
-
-    .pillar-item {
-        margin-bottom: 35px;
-        border-left: 3px solid var(--gold);
+    .pillar-card {
+        margin-bottom: 30px;
+        border-left: 2px solid var(--gold);
         padding-left: 20px;
     }
 
-    .pillar-item:last-child {
+    .pillar-card:last-child {
         margin-bottom: 0;
     }
 
-    .pillar-item h3 {
+    .pillar-card h3 {
         font-size: 1.1rem;
         font-weight: 700;
-        margin: 0 0 12px 0;
-        letter-spacing: -0.2px;
+        margin: 0 0 8px 0;
         color: var(--primary);
     }
 
-    .pillar-item p {
+    .pillar-card p {
         font-size: 0.95rem;
         color: var(--text-muted);
         margin: 0;
-        line-height: 1.7;
     }
 
-    /* INPUTS & CTA FORMS */
-    .cta-input {
+    /* INTERACTIVE INPUTS & FORM ELEMENTS */
+    .form-group {
+        text-align: left;
+        margin-bottom: 22px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .form-input {
         width: 100%;
         box-sizing: border-box;
         padding: 14px 18px;
@@ -253,19 +251,25 @@
         font-size: 0.95rem;
         border-radius: 6px;
         font-family: inherit;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .cta-input:focus {
+    .form-input:focus {
         outline: none;
         border-color: var(--gold);
+        box-shadow: 0 0 0 1px var(--gold);
     }
 
-    .cta-button {
+    textarea.form-input {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .submit-button {
         background: var(--gold);
         color: var(--bg);
         border: none;
-        padding: 14px 28px;
+        padding: 15px 32px;
         font-size: 0.9rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -274,14 +278,15 @@
         cursor: pointer;
         width: 100%;
         transition: all 0.2s ease;
+        margin-top: 10px;
     }
 
-    .cta-button:hover {
+    .submit-button:hover {
         background: var(--gold-hover);
         transform: translateY(-1px);
     }
 
-    /* SCROLL REVEAL */
+    /* SCROLL ANIMATION CLASS (REVEALEFFECT) */
     .reveal {
         opacity: 0;
         transform: translateY(20px);
@@ -293,6 +298,7 @@
         transform: translateY(0);
     }
 
+    /* FOOTER DESIGN */
     footer {
         padding: 60px 20px;
         text-align: center;
@@ -302,120 +308,125 @@
         background: #0b0f19;
     }
 
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 650px) {
-        section { padding: 40px 20px; }
-        .book-showcase { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-        .book-showcase h2 { text-align: center; }
-        .book-showcase h2::after { margin: 12px auto 0; }
-        .book-cover-frame { max-width: 240px; margin: 0 auto; }
-        .nav-links { gap: 15px; }
+    /* RESPONSIVE LAYOUT SCALING */
+    @media (max-width: 600px) {
+        section {
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .nav-links {
+            gap: 15px;
+        }
     }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -->
+<!-- PREMIUM FIXED NAVIGATION BAR -->
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="nav-logo">Gene Beeche</a>
+        <a href="#top" class="nav-logo">Gene Beeche</a>
         <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#speaking">Speaking</a>
-            <a href="index.html#media">Media</a>
-            <a href="#" class="featured-link">My Book</a>
+            <a href="#about">About</a>
+            <a href="#speaking">Speaking</a>
+            <a href="#media">Media</a>
+            <a href="book.html" class="featured-link">My Book</a>
         </div>
     </div>
 </nav>
 
-<header>
-    <h1>The Pursuit of Purpose</h1>
-    <div class="tagline">A Blueprint for the Modern Christian Man</div>
+<!-- HERO HEADER SECTION -->
+<header id="top">
+    <div class="profile-frame">
+        <!-- Replaced with a smart icon frame in case an image asset isn't deployed yet -->
+        <img src="profile.png" alt="Gene Beeche" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:var(--gold); font-size:1.8rem; font-weight:800;\'>GB</span>';">
+    </div>
+    <h1>Gene Beeche</h1>
+    <div class="subtitle">Faith &bull; Purpose &bull; Impact</div>
 </header>
 
+<!-- MAIN CONTENT BLOCK -->
 <div class="content-wrapper">
-    
-    <!-- BOOK FEATURE GRID -->
-    <section class="reveal book-showcase">
-        <div class="book-cover-frame">
-            <!-- Replace 'book-cover.png' with your real placeholder image when ready -->
-            <img src="book-cover.png" alt="The Pursuit of Purpose Book Cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:var(--text-muted); font-weight:600;\'>BOOK COVER PLACEHOLDER</span>';">
-        </div>
-        <div>
-            <h2>About The Book</h2>
-            <p style="font-size: 1.05rem; margin-bottom: 20px; color: var(--primary-light);">
-                In a culture built on comfort, passive mindsets, and superficial metrics, young men are losing the map for genuine Biblical manhood. 
-            </p>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
-                This book documents the real, unfiltered raw structures of breaking routine dependencies on fleeting emotions. Drawing direct insights from boxing training paradigms and scriptural anchoring, it is an action-oriented manifesto built explicitly to help you step up, own your daily execution, and live with high-conviction responsibility.
-            </p>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="reveal">
+        <h2>About Me</h2>
+        <p class="lead-text">
+            I am dedicated to helping young Christian men break out of passivity, establish rigid daily consistency, and build a lasting, active relationship with Christ. True strength isn't found in comfort or societal praise—it's forged through intentional choices, continuous self-mastery, and absolute scriptural conviction.
+        </p>
+    </section>
+
+    <!-- CORE PILLARS SECTION -->
+    <section id="media" class="reveal">
+        <h2>Core Pillars</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <h3>Absolute Accountability</h3>
+                <p>Owning your responsibilities and actions completely, without creating modern excuses or deferring to changing circumstances.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Scriptural Anchoring</h3>
+                <p>Ensuring that every critical life, relationship, and career decision is grounded deeply and unalterably in Biblical truth.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Consistent Execution</h3>
+                <p>Building disciplined routines that protect your focus and energy over long horizons, completely independent of fleeting daily motivation.</p>
+            </div>
         </div>
     </section>
 
-    <!-- WHAT'S INSIDE SECTION -->
-    <section class="reveal pillars-detailed">
-        <h2>What You'll Explore</h2>
-        
-        <div class="pillar-item">
-            <h3>1. The Sandy Foundations</h3>
-            <p>Deconstructing modern security traps and replacing them with a bulletproof lifestyle completely anchored in an unyielding relationship with Christ.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>2. Killing Motivation Dependencies</h3>
-            <p>Actionable, structured frameworks designed to protect execution paths during dark early mornings when temporary emotions drop to zero.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>3. Character When No One Is Watching</h3>
-            <p>Shifting focus away from standard cultural applause and digital reputations toward deep, authentic internal integrity and structural character development.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>4. Embracing High-Value Sacrifices</h3>
-            <p>Learning to systematically target old comfort patterns, toxic compromises, and micro-habits that delay long-term leadership potential.</p>
-        </div>
-    </section>
-
-    <!-- NOTIFICATION OR PRE-ORDER SIGNUP BLOCK -->
-    <section class="reveal" style="text-align: left; max-width: 550px; margin: 0 auto 40px auto;">
-        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; text-align: center;">Get Launch Notifications</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 30px;">
-            The book is currently in production. Drop your info below to get early notifications, launch chapters, and pre-order updates directly.
+    <!-- SPEAKING BOOKING SECTION (INTEGRATED WITH FORMSPREE) -->
+    <section id="speaking" class="reveal" style="max-width: 580px; margin-left: auto; margin-right: auto;">
+        <h2>Book a Speaking Gig</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 35px;">
+            Want to bring a clear, raw message on discipline, conviction, and faith to your group, school, or church event? Fill out the details below.
         </p>
         
-        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! You are on the VIP waitlist.');" style="display: flex; flex-direction: column; gap: 20px;">
-            <div>
-                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Your Name</label>
-                <input type="text" name="book_subscriber_name" required class="cta-input">
-            </div>
-            <div>
-                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Email Address</label>
-                <input type="email" name="book_subscriber_email" required class="cta-input">
+        <!-- FORMSPREE LIVE ENDPOINT -->
+        <form action="https://formspree.io/f/xkoaqddb" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="Client Name" required class="form-input" placeholder="John Doe">
             </div>
 
-            <button type="submit" class="cta-button" style="margin-top: 10px;">Join the Book Waitlist</button>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Client Email" required class="form-input" placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="event">Event & Organization Details</label>
+                <textarea id="event" name="Event Details" required class="form-input" placeholder="Tell me about your event, the audience, and proposed dates..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Booking Inquiry</button>
         </form>
     </section>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-    &copy; 2026 Gene Beeche &bull; Faith & Purpose
+    &copy; 2026 Gene Beeche &bull; Built with Devotion
 </footer>
 
-<!-- SCROLL REVEAL SCRIPT -->
+<!-- INTERSECTION OBSERVER FOR SCROLL REVEALS -->
 <script>
     const reveals = document.querySelectorAll('.reveal');
+    
     const revealOnScroll = () => {
         reveals.forEach(el => {
             const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
+            // Trigger animation slightly before the element fully enters viewport
+            if (rect.top < window.innerHeight - 80) {
                 el.classList.add('visible');
             }
         });
     };
+
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
 </script>
