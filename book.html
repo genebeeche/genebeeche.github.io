@@ -8,22 +8,22 @@
 
 <style>
     :root {
-        --primary: #0f172a; /* Deep professional navy */
-        --primary-light: #1e293b;
-        --gold: #c5a85c; /* Refined premium gold */
-        --gold-hover: #b39449;
-        --bg: #f8fafc; /* Ultra-clean slate background */
-        --card-bg: #ffffff;
-        --border: #e2e8f0;
-        --text: #0f172a;
-        --text-muted: #475569;
+        --bg: #0b0f19;
+        --card-bg: #131a26;
+        --card-elevated: #1e293b;
+        --primary: #f8fafc;
+        --primary-light: #e2e8f0;
+        --text-muted: #94a3b8;
+        --gold: #c5a85c;
+        --gold-hover: #e2c275;
+        --border: rgba(255, 255, 255, 0.06);
     }
 
     body {
         margin: 0;
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         background: var(--bg);
-        color: var(--text);
+        color: var(--primary-light);
         line-height: 1.8;
         -webkit-font-smoothing: antialiased;
     }
@@ -57,8 +57,7 @@
     /* HEADER SECTION */
     header {
         text-align: center;
-        padding: 60px 20px 60px;
-        position: relative;
+        padding: 60px 20px;
     }
 
     h1 {
@@ -92,7 +91,7 @@
         border-radius: 12px;
         margin-bottom: 40px;
         border: 1px solid var(--border);
-        box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     /* BOOK CONCEPT PREVIEW */
@@ -106,10 +105,10 @@
     .book-cover-mock {
         width: 100%;
         aspect-ratio: 5 / 8;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        background: linear-gradient(135deg, #131a26 0%, #1e293b 100%);
         border-radius: 6px;
-        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
-        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -199,12 +198,11 @@
 
     /* LAUNCH WAITING LIST CTA */
     .cta-box {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-        color: #ffffff;
+        background: linear-gradient(135deg, #131a26 0%, #0b0f19 100%);
         padding: 60px 40px;
-        border: none;
+        border: 1px solid var(--border);
         text-align: center;
-        box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
     }
 
     .cta-box h2 {
@@ -222,12 +220,12 @@
         font-weight: 700;
         margin: 0 0 15px 0;
         letter-spacing: -0.3px;
-        color: #ffffff;
+        color: var(--primary);
     }
 
     .cta-desc {
         font-size: 0.95rem;
-        color: #94a3b8;
+        color: var(--text-muted);
         margin: 0 0 35px 0;
         line-height: 1.7;
     }
@@ -243,7 +241,7 @@
         flex: 1;
         padding: 14px 18px;
         border: 1px solid #334155;
-        background: rgba(15, 23, 42, 0.6);
+        background: rgba(11, 15, 25, 0.8);
         color: #fff;
         font-size: 0.95rem;
         border-radius: 6px;
@@ -258,7 +256,7 @@
 
     .cta-button {
         background: var(--gold);
-        color: var(--primary);
+        color: var(--bg);
         border: none;
         padding: 14px 28px;
         font-size: 0.9rem;
@@ -293,10 +291,9 @@
         font-size: 0.85rem;
         color: var(--text-muted);
         border-top: 1px solid var(--border);
-        background: #fff;
+        background: #0b0f19;
     }
 
-    /* RESPONSIVE DESIGN */
     @media (max-width: 650px) {
         .book-preview-grid { grid-template-columns: 1fr; gap: 30px; }
         .book-cover-mock { max-width: 240px; margin: 0 auto; }
@@ -312,7 +309,6 @@
 <body>
 
 <nav>
-    <!-- Simple link back to your main landing page -->
     <a href="index.html" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         Back to Home
@@ -326,7 +322,6 @@
 
 <div class="content-wrapper">
     
-    <!-- OVERVIEW SECTION -->
     <section class="reveal book-preview-grid">
         <div class="book-cover-mock">
             <div class="cover-title">THE BLUEPRINT</div>
@@ -340,39 +335,32 @@
         </div>
     </section>
 
-    <!-- CHAPTER BLUEPRINT -->
     <section class="reveal">
         <h2>The Core Framework</h2>
         <div class="chapter-list">
-            
             <div class="chapter-item">
                 <div class="chapter-num">Chapter 1</div>
                 <h3 class="chapter-title">The Foundation of Sand</h3>
                 <p class="chapter-desc">Why modern motivation fails, how culture misleads young men, and why true strength requires an unyielding anchor in Jesus Christ.</p>
             </div>
-
             <div class="chapter-item">
                 <div class="chapter-num">Chapter 2</div>
                 <h3 class="chapter-title">The Dark Mornings</h3>
                 <p class="chapter-desc">Practical steps to master daily discipline, eliminate excuses, and execute the work when you don't feel like showing up.</p>
             </div>
-
             <div class="chapter-item">
                 <div class="chapter-num">Chapter 3</div>
                 <h3 class="chapter-title">Character in the Silent Rooms</h3>
                 <p class="chapter-desc">Defining yourself by who you are when nobody is watching, choosing depth over reputation, and building a name that carries weight.</p>
             </div>
-
             <div class="chapter-item">
                 <div class="chapter-num">Chapter 4</div>
                 <h3 class="chapter-title">Sacrifice and Legacy</h3>
                 <p class="chapter-desc">Shifting your perspective from personal status to family leadership. How the battles you choose to fight today lay down the track for generations to come.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- BOOK CTA WAITING LIST -->
     <section class="reveal cta-box">
         <h2>Get Early Access</h2>
         <p class="cta-subtitle">Be the first to know when the first chapter drops.</p>
@@ -392,7 +380,6 @@
 
 <script>
     const reveals = document.querySelectorAll('.reveal');
-    
     const revealOnScroll = () => {
         reveals.forEach(el => {
             const rect = el.getBoundingClientRect();
@@ -401,7 +388,6 @@
             }
         });
     };
-
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
 </script>
