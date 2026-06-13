@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -747,6 +747,7 @@
             </p>
             
             <form action="https://formspree.io/f/xkoaqddb" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- ROW 1: Name and Email -->
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 200px;">
                         <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Your Name</label>
@@ -758,10 +759,11 @@
                     </div>
                 </div>
 
+                <!-- ROW 2: Phone Number and Organization -->
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 200px;">
-                        <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Event Date & Location</label>
-                        <input type="text" name="Event Details" placeholder="e.g., Oct 24th - Sydney" required class="cta-input" style="width: 100%; box-sizing: border-box;">
+                        <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Phone Number</label>
+                        <input type="tel" name="Speaker Request Phone" placeholder="e.g., +61 400 000 000" class="cta-input" style="width: 100%; box-sizing: border-box;">
                     </div>
                     <div style="flex: 1; min-width: 200px;">
                         <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Organization / Event Name</label>
@@ -769,6 +771,13 @@
                     </div>
                 </div>
 
+                <!-- ROW 3: Event Date & Location -->
+                <div>
+                    <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Event Date & Location</label>
+                    <input type="text" name="Event Details" placeholder="e.g., Oct 24th - Sydney" required class="cta-input" style="width: 100%; box-sizing: border-box;">
+                </div>
+
+                <!-- ROW 4: Overview Textarea -->
                 <div>
                     <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Brief Event Overview & Audience Size</label>
                     <textarea name="Message Overview" rows="4" placeholder="Tell me about your event, the target audience, and what goals you want to achieve with this session..." required class="cta-input" style="width: 100%; box-sizing: border-box; resize: vertical; line-height: 1.5;"></textarea>
