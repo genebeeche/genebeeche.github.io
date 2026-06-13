@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Book | Gene Beeche</title>
+<title>My Book | The Pursuit of Purpose by Gene Beeche</title>
+
+<!-- Google Fonts for premium typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
     :root {
@@ -17,6 +22,11 @@
         --gold: #c5a85c;
         --gold-hover: #e2c275;
         --border: rgba(255, 255, 255, 0.06);
+        --border-hover: rgba(255, 255, 255, 0.15);
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     body {
@@ -26,63 +36,69 @@
         color: var(--primary-light);
         line-height: 1.8;
         -webkit-font-smoothing: antialiased;
+        padding-top: 70px;
     }
 
-    /* NAVIGATION */
+    /* NAV BAR STYLE */
     nav {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 30px 20px 0;
-        text-align: left;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        background: rgba(11, 15, 25, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .back-link {
-        color: var(--text-muted);
+    .nav-container {
+        width: 100%;
+        max-width: 700px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-logo {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--primary);
         text-decoration: none;
+        letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
         font-size: 0.9rem;
         font-weight: 600;
-        display: inline-flex;
-        align-items: center;
         transition: color 0.2s ease;
     }
 
-    .back-link:hover {
+    .nav-links a:hover {
         color: var(--gold);
     }
 
-    .back-link svg {
-        margin-right: 8px;
-    }
-
-    /* HEADER SECTION */
-    header {
-        text-align: center;
-        padding: 60px 20px;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-        font-weight: 800;
-        margin: 0;
-        letter-spacing: -0.5px;
-        color: var(--primary);
-        line-height: 1.2;
-    }
-
-    .subtitle {
+    .nav-links a.featured-link {
         color: var(--gold);
-        letter-spacing: 3px;
-        margin-top: 15px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        text-transform: uppercase;
     }
 
-    /* MAIN CONTENT */
+    /* WRAPPER COHESION */
     .content-wrapper {
         max-width: 700px;
         margin: 0 auto;
-        padding: 0 20px 80px;
+        padding: 60px 20px 80px;
     }
 
     section {
@@ -92,46 +108,20 @@
         margin-bottom: 40px;
         border: 1px solid var(--border);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        transition: border-color 0.3s ease;
+    }
+    
+    section:hover {
+        border-color: var(--border-hover);
     }
 
-    /* BOOK CONCEPT PREVIEW */
-    .book-preview-grid {
+    /* MATCHING IMAGE_8.PNG STRUCTURE */
+    .book-showcase {
         display: grid;
         grid-template-columns: 1fr 1.3fr;
         gap: 40px;
-        align-items: center;
-    }
-
-    .book-cover-mock {
-        width: 100%;
-        aspect-ratio: 5 / 8;
-        background: linear-gradient(135deg, #131a26 0%, #1e293b 100%);
-        border-radius: 6px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        border: 1px solid var(--border);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    .cover-title {
-        color: #fff;
-        font-size: 1.4rem;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        margin-bottom: 10px;
-    }
-
-    .cover-author {
-        color: var(--gold);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 600;
+        align-items: start;
+        text-align: left;
     }
 
     h2 {
@@ -155,90 +145,59 @@
         border-radius: 2px;
     }
 
-    .overview-text {
-        font-size: 1.05rem;
-        color: var(--primary-light);
-        margin: 0;
-    }
-
-    /* CHAPTER/LAYOUT LOG */
-    .chapter-list {
-        margin-top: 20px;
-    }
-
-    .chapter-item {
-        border-bottom: 1px solid var(--border);
-        padding: 20px 0;
-    }
-
-    .chapter-item:first-child { padding-top: 0; }
-    .chapter-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .chapter-num {
-        font-size: 0.8rem;
-        color: var(--gold);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 4px;
-    }
-
-    .chapter-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--primary);
-        margin: 0 0 8px 0;
-    }
-
-    .chapter-desc {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        margin: 0;
-    }
-
-    /* LAUNCH WAITING LIST CTA */
-    .cta-box {
-        background: linear-gradient(135deg, #131a26 0%, #0b0f19 100%);
-        padding: 60px 40px;
+    .book-cover-frame {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        border-radius: 6px;
+        overflow: hidden;
         border: 1px solid var(--border);
-        text-align: center;
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        background: #090d16;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
     }
 
-    .cta-box h2 {
-        color: var(--gold);
-        margin-bottom: 15px;
-        text-align: center;
+    .book-cover-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .cta-box h2::after {
-        margin: 12px auto 0;
+    /* PILLARS STYLE */
+    .pillars-detailed {
+        text-align: left;
     }
 
-    .cta-subtitle {
-        font-size: 1.4rem;
+    .pillar-item {
+        margin-bottom: 30px;
+        border-left: 2px solid var(--gold);
+        padding-left: 20px;
+    }
+
+    .pillar-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .pillar-item h3 {
+        font-size: 1.1rem;
         font-weight: 700;
-        margin: 0 0 15px 0;
-        letter-spacing: -0.3px;
+        margin: 0 0 8px 0;
         color: var(--primary);
     }
 
-    .cta-desc {
+    .pillar-item p {
         font-size: 0.95rem;
         color: var(--text-muted);
-        margin: 0 0 35px 0;
+        margin: 0;
         line-height: 1.7;
     }
 
-    .cta-form {
-        display: flex;
-        gap: 12px;
-        max-width: 480px;
-        margin: 0 auto;
-    }
-
+    /* FORMS & INPUTS */
     .cta-input {
-        flex: 1;
+        width: 100%;
+        box-sizing: border-box;
         padding: 14px 18px;
         border: 1px solid #334155;
         background: rgba(11, 15, 25, 0.8);
@@ -246,25 +205,28 @@
         font-size: 0.95rem;
         border-radius: 6px;
         font-family: inherit;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        margin-bottom: 5px;
     }
 
     .cta-input:focus {
         outline: none;
         border-color: var(--gold);
+        box-shadow: 0 0 0 1px var(--gold);
     }
 
     .cta-button {
         background: var(--gold);
         color: var(--bg);
         border: none;
-        padding: 14px 28px;
+        padding: 15px 32px;
         font-size: 0.9rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
         border-radius: 6px;
         cursor: pointer;
+        width: 100%;
         transition: all 0.2s ease;
     }
 
@@ -273,7 +235,7 @@
         transform: translateY(-1px);
     }
 
-    /* SCROLL REVEAL */
+    /* SCROLL REVEAL EFFECTS */
     .reveal {
         opacity: 0;
         transform: translateY(20px);
@@ -295,80 +257,94 @@
     }
 
     @media (max-width: 650px) {
-        .book-preview-grid { grid-template-columns: 1fr; gap: 30px; }
-        .book-cover-mock { max-width: 240px; margin: 0 auto; }
         section { padding: 40px 20px; }
-        h2::after { margin: 12px auto 0; }
-        h2 { text-align: center; }
-        .cta-form { flex-direction: column; }
-        .cta-button { width: 100%; }
+        .book-showcase { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+        .book-showcase h2::after { margin: 12px auto 0; }
+        .book-cover-frame { max-width: 240px; margin: 0 auto; }
+        .nav-links { gap: 15px; }
     }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION BAR -->
 <nav>
-    <a href="index.html" class="back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        Back to Home
-    </a>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">Gene Beeche</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#speaking">Speaking</a>
+            <a href="index.html#media">Media</a>
+            <a href="#" class="featured-link">My Book</a>
+        </div>
+    </div>
 </nav>
 
-<header>
-    <h1>The Blueprint</h1>
-    <div class="subtitle">Empowering Men to Live the Way God Says</div>
-</header>
-
 <div class="content-wrapper">
-    
-    <section class="reveal book-preview-grid">
-        <div class="book-cover-mock">
-            <div class="cover-title">THE BLUEPRINT</div>
-            <div class="cover-author">GENE BEECHE</div>
+
+    <!-- BOOK LAYOUT OVERVIEW (Matches image_8.png explicitly) -->
+    <section class="reveal book-showcase" style="margin-top: 40px;">
+        <div class="book-cover-frame">
+            <!-- Automatically uses text placeholder styling if book-cover.png isn't available yet -->
+            <img src="book-cover.png" alt="The Pursuit of Purpose Book Cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:var(--text-muted); font-weight:600; font-size:0.8rem; text-align:center; padding:10px;\'>BOOK COVER PLACEHOLDER</span>';">
         </div>
         <div>
-            <h2>The Vision</h2>
-            <p class="overview-text">
-                This book is a raw, unfiltered guide for young men who are done drifting through culture and are ready to anchor their lives in something permanent. It isn't academic theology or soft self-help—it is a tactical, faith-driven layout on how to build relentless daily discipline, lead with integrity, and step into the high calling God has established for men.
+            <h2>About The Book</h2>
+            <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.6; margin-bottom: 22px; color: var(--primary);">
+                In a culture built on comfort, passive mindsets, and superficial metrics, young men are losing the map for genuine Biblical manhood. 
+            </p>
+            <p style="font-size: 0.98rem; color: var(--text-muted); margin: 0; line-height: 1.75;">
+                This book documents the real, unfiltered raw structures of breaking routine dependencies on fleeting emotions. Drawing direct insights from boxing training paradigms and scriptural anchoring, it is an action-oriented manifesto built explicitly to help you step up, own your daily execution, and live with high-conviction responsibility.
             </p>
         </div>
     </section>
 
-    <section class="reveal">
-        <h2>The Core Framework</h2>
-        <div class="chapter-list">
-            <div class="chapter-item">
-                <div class="chapter-num">Chapter 1</div>
-                <h3 class="chapter-title">The Foundation of Sand</h3>
-                <p class="chapter-desc">Why modern motivation fails, how culture misleads young men, and why true strength requires an unyielding anchor in Jesus Christ.</p>
-            </div>
-            <div class="chapter-item">
-                <div class="chapter-num">Chapter 2</div>
-                <h3 class="chapter-title">The Dark Mornings</h3>
-                <p class="chapter-desc">Practical steps to master daily discipline, eliminate excuses, and execute the work when you don't feel like showing up.</p>
-            </div>
-            <div class="chapter-item">
-                <div class="chapter-num">Chapter 3</div>
-                <h3 class="chapter-title">Character in the Silent Rooms</h3>
-                <p class="chapter-desc">Defining yourself by who you are when nobody is watching, choosing depth over reputation, and building a name that carries weight.</p>
-            </div>
-            <div class="chapter-item">
-                <div class="chapter-num">Chapter 4</div>
-                <h3 class="chapter-title">Sacrifice and Legacy</h3>
-                <p class="chapter-desc">Shifting your perspective from personal status to family leadership. How the battles you choose to fight today lay down the track for generations to come.</p>
-            </div>
+    <!-- DETAILED STUDY EXPLORATION -->
+    <section class="reveal pillars-detailed">
+        <h2>What You'll Explore</h2>
+
+        <div class="pillar-item">
+            <h3>1. The Sandy Foundations</h3>
+            <p>Deconstructing modern security traps and replacing them with a bulletproof lifestyle completely anchored in an unyielding relationship with Christ.</p>
+        </div>
+
+        <div class="pillar-item">
+            <h3>2. Killing Motivation Dependencies</h3>
+            <p>Actionable, structured frameworks designed to protect execution paths during dark early mornings when temporary emotions drop to zero.</p>
+        </div>
+
+        <div class="pillar-item">
+            <h3>3. Character When No One Is Watching</h3>
+            <p>Shifting focus away from standard cultural applause and digital reputations toward deep, authentic internal integrity and structural character development.</p>
+        </div>
+
+        <div class="pillar-item">
+            <h3>4. Embracing High-Value Sacrifices</h3>
+            <p>Learning to systematically target old comfort patterns, toxic compromises, and micro-habits that delay long-term leadership potential.</p>
         </div>
     </section>
 
-    <section class="reveal cta-box">
-        <h2>Get Early Access</h2>
-        <p class="cta-subtitle">Be the first to know when the first chapter drops.</p>
-        <p class="cta-desc">Sign up below to secure your spot on the launch waiting list, receive exclusive behind-the-scenes writing updates, and get early sample previews before the official release.</p>
-        
-        <form class="cta-form" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Enter Your Email Address" required class="cta-input">
-            <button type="submit" class="cta-button">Join List</button>
+    <!-- EXCLUSIVE BOOK NOTIFICATION FORM -->
+    <section class="reveal" style="text-align: left; max-width: 550px; margin: 0 auto;">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; text-align: center;">Get Launch Notifications</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 30px;">
+            The book is currently in production. Drop your info below to get early notifications, launch chapters, and pre-order updates directly.
+        </p>
+
+        <form action="https://formspree.io/f/xkoaqddb" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Your Name</label>
+                <input type="text" name="Book Subscriber Name" required class="cta-input" placeholder="John Doe">
+            </div>
+            
+            <div>
+                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Email Address</label>
+                <input type="email" name="Book Subscriber Email" required class="cta-input" placeholder="john@example.com">
+            </div>
+
+            <input type="hidden" name="_subject" value="New Book Waitlist Registration!">
+            <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Join the Book Waitlist</button>
         </form>
     </section>
 
