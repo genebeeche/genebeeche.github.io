@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Book | Gene Beeche</title>
+<title>Gene Beeche | Faith, Discipline & Purpose</title>
 
 <!-- Google Fonts for premium typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,48 +244,7 @@
         color: var(--gold);
     }
 
-    /* TWO-COLUMN GRID FOR BOOK PROFILE */
-    .book-showcase {
-        display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 40px;
-        align-items: center;
-        text-align: left;
-    }
-
-    .book-showcase h2 {
-        text-align: left;
-    }
-
-    .book-showcase h2::after {
-        margin: 12px 0 0 0;
-    }
-
-    .book-cover-frame {
-        width: 100%;
-        aspect-ratio: 2 / 3;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        background: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .book-cover-frame:hover {
-        transform: scale(1.02);
-    }
-
-    .book-cover-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* CHAPTER/PILLAR LISTS */
+    /* PILLAR LISTS FOR SPEAKING */
     .pillars-detailed {
         text-align: left;
     }
@@ -314,7 +273,7 @@
         line-height: 1.7;
     }
 
-    /* LEGACY TWO-COLUMN BLOCK */
+    /* TWO-COLUMN BLOCK */
     .legacy-block {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
@@ -566,10 +525,6 @@
         .legacy-block h2::after { margin: 12px auto 0; }
         .legacy-image-frame { order: -1; height: 220px; }
         .cta-form { flex-direction: column; }
-        .book-showcase { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-        .book-showcase h2 { text-align: center; }
-        .book-showcase h2::after { margin: 12px auto 0; }
-        .book-cover-frame { max-width: 240px; margin: 0 auto; }
         .nav-links { gap: 15px; }
     }
 </style>
@@ -580,17 +535,17 @@
 <!-- NAVIGATION BAR -->
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="nav-logo">Gene Beeche</a>
+        <a href="#" class="nav-logo">Gene Beeche</a>
         <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#speaking">Speaking</a>
-            <a href="index.html#media">Media</a>
-            <a href="#" class="featured-link">My Book</a>
+            <a href="#about">About</a>
+            <a href="#speaking">Speaking</a>
+            <a href="#media">Media</a>
+            <a href="book.html" class="featured-link">My Book</a>
         </div>
     </div>
 </nav>
 
-<!-- HERO HEADER -->
+<!-- HERO HEADER (Matches image_6.png profile styling) -->
 <header>
     <div class="profile-image-container">
         <img src="training.png" alt="Gene Beeche" class="profile-img">
@@ -658,47 +613,6 @@
         </div>
     </section>
 
-    <!-- BOOK FEATURE GRID -->
-    <section class="reveal book-showcase">
-        <div class="book-cover-frame">
-            <img src="book-cover.png" alt="The Pursuit of Purpose Book Cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:var(--text-muted); font-weight:600;\'>BOOK COVER PLACEHOLDER</span>';">
-        </div>
-        <div>
-            <h2>About The Book</h2>
-            <p style="font-size: 1.05rem; margin-bottom: 20px; color: var(--primary-light);">
-                In a culture built on comfort, passive mindsets, and superficial metrics, young men are losing the map for genuine Biblical manhood. 
-            </p>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
-                This book documents the real, unfiltered raw structures of breaking routine dependencies on fleeting emotions. Drawing direct insights from boxing training paradigms and scriptural anchoring, it is an action-oriented manifesto built explicitly to help you step up, own your daily execution, and live with high-conviction responsibility.
-            </p>
-        </div>
-    </section>
-
-    <!-- WHAT'S INSIDE SECTION -->
-    <section class="reveal pillars-detailed">
-        <h2>What You'll Explore</h2>
-
-        <div class="pillar-item">
-            <h3>1. The Sandy Foundations</h3>
-            <p>Deconstructing modern security traps and replacing them with a bulletproof lifestyle completely anchored in an unyielding relationship with Christ.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>2. Killing Motivation Dependencies</h3>
-            <p>Actionable, structured frameworks designed to protect execution paths during dark early mornings when temporary emotions drop to zero.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>3. Character When No One Is Watching</h3>
-            <p>Shifting focus away from standard cultural applause and digital reputations toward deep, authentic internal integrity and structural character development.</p>
-        </div>
-
-        <div class="pillar-item">
-            <h3>4. Embracing High-Value Sacrifices</h3>
-            <p>Learning to systematically target old comfort patterns, toxic compromises, and micro-habits that delay long-term leadership potential.</p>
-        </div>
-    </section>
-
     <!-- TWO-COLUMN LEGACY FRAME -->
     <section class="reveal legacy-block">
         <div>
@@ -712,14 +626,13 @@
         </div>
     </section>
 
-    <!-- SPEAKING SECTION -->
+    <!-- SPEAKING SECTION (With integrated intake form phone field) -->
     <section id="speaking" class="reveal">
         <h2>Keynote Speaking</h2>
         <p class="about-text" style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">
             Bringing raw perspective, high-intensity principles, and practical strategies to youth events, sports clubs, and faith-based men's gatherings.
         </p>
 
-        <!-- Signature Topics -->
         <div class="pillars-detailed" style="text-align: left; margin-bottom: 50px;">
             <div class="pillar-item">
                 <h3>1. Forging Relentless Discipline</h3>
@@ -780,18 +693,16 @@
                 <!-- ROW 4: Overview Textarea -->
                 <div>
                     <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Brief Event Overview & Audience Size</label>
-                    <textarea name="Message Overview" rows="4" placeholder="Tell me about your event, the target audience, and what goals you want to achieve with this session..." required class="cta-input" style="width: 100%; box-sizing: border-box; resize: vertical; line-height: 1.5;"></textarea>
+                    <textarea name="Message Overview" rows="4" placeholder="Tell me about your event..." required class="cta-input" style="width: 100%; box-sizing: border-box; resize: vertical; line-height: 1.5;"></textarea>
                 </div>
 
-                <!-- Context classification line for Formspree filtering -->
                 <input type="hidden" name="_subject" value="New Keynote Speaking Intake Request!">
-
                 <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Submit Speaking Request</button>
             </form>
         </div>
     </section>
 
-    <!-- DYNAMIC LATEST MEDIA GRID -->
+    <!-- MEDIA GRID -->
     <section id="media" class="reveal">
         <h2>Documenting The Reality</h2>
         <div class="media-grid">
@@ -816,37 +727,11 @@
         </div>
     </section>
 
-    <!-- BOOK SIGNUP WAITLIST BLOCK -->
-    <section class="reveal" style="text-align: left; max-width: 550px; margin: 0 auto 40px auto;">
-        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; text-align: center;">Get Launch Notifications</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 30px;">
-            The book is currently in production. Drop your info below to get early notifications, launch chapters, and pre-order updates directly.
-        </p>
-
-        <!-- LIVE FORMSPREE PRODUCTION ENDPOINT -->
-        <form action="https://formspree.io/f/xkoaqddb" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-            <div>
-                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Your Name</label>
-                <input type="text" name="Book Subscriber Name" required class="cta-input" placeholder="John Doe">
-            </div>
-            
-            <div>
-                <label style="display: block; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Email Address</label>
-                <input type="email" name="Book Subscriber Email" required class="cta-input" placeholder="john@example.com">
-            </div>
-
-            <!-- Context subject classification line for Formspree dashboard processing -->
-            <input type="hidden" name="_subject" value="New Book Waitlist Registration!">
-
-            <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Join the Book Waitlist</button>
-        </form>
-    </section>
-
     <!-- GENERAL NEWSLETTER CALL TO ACTION BLOCK -->
     <section class="reveal cta-box">
         <h2>Join The Pursuit</h2>
         <p class="cta-subtitle">The reality of the grind, delivered straight to your inbox.</p>
-        <p class="cta-desc">Sign up to receive weekly, raw reflections on deepening your faith, the unfiltered realities of boxing training, and actionable strategies for building relentless daily discipline.</p>
+        <p class="cta-desc">Sign up to receive weekly reflections on deepening your faith, boxing realities, and actionable execution strategies.</p>
 
         <form action="https://formspree.io/f/xkoaqddb" method="POST" class="cta-form">
             <input type="email" name="Weekly Newsletter Subscriber" placeholder="Enter Your Email Address" required class="cta-input">
@@ -860,10 +745,10 @@
         <h2>Follow The Journey</h2>
         <div class="social-links">
             <a href="https://www.youtube.com/@genebeeche8129" class="btn" title="YouTube" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 .502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
             <a href="https://www.instagram.com/genebeeche/" class="btn" title="Instagram" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
             <a href="https://www.tiktok.com/@genebeeche" class="btn" title="TikTok" target="_blank">
                 <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.62 4.2 1.23 1.33 2.97 2.09 4.68 2.39v3.9c-1.49-.05-2.97-.52-4.22-1.34-.67-.44-1.25-.99-1.72-1.64v7.4c.01 2.21-.73 4.41-2.14 6.1-1.63 1.95-4.16 3.03-6.69 2.83-2.6-.2-5.02-1.75-6.27-4.04-1.4-2.54-1.24-5.91.4-8.29 1.44-2.1 3.86-3.4 6.41-3.4.37 0 .74.03 1.1.08v4.02c-.81-.21-1.69-.11-2.42.3-.96.54-1.57 1.57-1.62 2.68-.07 1.47.96 2.85 2.41 3.1 1.15.2 2.38-.24 3.05-1.18.39-.55.57-1.22.56-1.89V.02z"/></svg>
